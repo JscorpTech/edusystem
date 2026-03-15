@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: edusystem-config
+  namespace: edusystem
+data:
+  DJANGO_SETTINGS_MODULE: "config.settings.production"
+  DEBUG: "False"
+  DB_ENGINE: "django.db.backends.postgresql_psycopg2"
+  DB_NAME: "django"
+  DB_USER: "postgres"
+  DB_HOST: "postgres"
+  DB_PORT: "5432"
+  REDIS_URL: "redis://redis:6379"
+  CACHE_BACKEND: "django.core.cache.backends.redis.RedisCache"
+  CACHE_ENABLED: "True"
+  CACHE_TIMEOUT: "120"
+  ALLOWED_HOSTS: "edusystem.uz,www.edusystem.uz"
+  CSRF_TRUSTED_ORIGINS: "https://edusystem.uz,https://www.edusystem.uz"
